@@ -72,3 +72,15 @@ main
 {
     background-color: lightseagreen;
 }
+
+.today24
+{
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+    grid-template-rows: repeat(1fr, 8);
+}
+
+.today-grid
+{
+    background-color: blue;
+}
