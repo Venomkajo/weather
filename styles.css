@@ -73,14 +73,31 @@ main
     background-color: lightseagreen;
 }
 
+.today-header
+{
+    text-align: center;
+    height: min-content;
+    width: 100%;
+}
+
 .today24
 {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
-    grid-template-rows: repeat(1fr, 8);
+    height: 600px;
+    width: 100%;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 25%);
+    font-size: 16px;
+    color: black;
 }
 
-.today-grid
+.weather-grid
 {
-    background-color: blue;
+    background-color: lightcyan;
+    outline: 5px solid black;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
