@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
         <title>Weather App</title>
     </head>
     <body>
@@ -13,10 +13,30 @@
             <p>Welcome to weather!</p>
         </header>
         <main>
-            <img id="weatherImage" src="#" alt="future weather image">
-            <div class="weather-container">
-                <p id="weatherDisplay">Sunny</p>
-                <p id="weatherTemperature">30^C</p>
+            <div class="current">
+                <p>Current:</p>
+                <img id="weatherImage" src="#" alt="future weather image">
+                <div class="weather-container">
+                    <p id="weatherDisplay">Sunny</p>
+                    <p id="weatherTemperature">30'C</p>
+                </div>
+            </div>
+            <div class="today">
+                <p>Today</p>
+            </div>
+            <div class="tomorrow">              
+                <p>Tomorrow</p>
+                <div class="weather-container">
+                    <p id="weatherDisplayOne">Rainy</p>
+                    <p id="weatherTemperatureOne">25'C</p>
+                </div>
+            </div>
+            <div class="after-tomorrow">
+                <p>Day after tomorrow</p>
+                <div class="weather-container">
+                    <p id="weatherDisplayTwo">Stormy</p>
+                    <p id="weatherTemperatureTwo">20'C</p>
+                </div>
             </div>
         </main>
     </body>
