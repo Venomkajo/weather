@@ -1,3 +1,5 @@
+import { getRadioButton } from "./radioButtons";
+
 // update the entire display
 export function updateDisplay(updateData) {
     // update current
@@ -7,7 +9,11 @@ export function updateDisplay(updateData) {
 
     currentWeatherImage.src = updateData.current.condition.icon;
     currentWeatherDisplay.innerText = updateData.current.condition.text;
-    currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
+    if (getRadioButton() === 'C'){
+        currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
+    } else {
+        currentWeatherTemperature.innerText = updateData.current.temp_f + 'F';
+    }
 
     // update today
     const todayContainer = document.querySelector('#today24');
@@ -45,7 +51,12 @@ function update24(containerDiv, data24, day){
         weatherContainer.appendChild(weatherDisplayP);
 
         const weatherTemperatureP = document.createElement('p');
-        weatherTemperatureP.innerText = currentHour.temp_c + 'C';
+        if (getRadioButton() === 'C')
+        {
+            weatherTemperatureP.innerText = currentHour.temp_c + 'C';
+        } else {
+            weatherTemperatureP.innerText = currentHour.temp_f + 'F';
+        }
         weatherContainer.appendChild(weatherTemperatureP);
 
         containerDiv.appendChild(weatherGrid);

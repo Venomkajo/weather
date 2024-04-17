@@ -8,7 +8,15 @@ import { clearDisplay } from './clearDisplay';
 let data = '';
 let input = 'wroclaw';
 
-startApi();
+updateApi();
+
+const radioButtons = document.querySelectorAll('input[name="unit"]');
+radioButtons.forEach(button => {
+    button.addEventListener('click', function(){
+        clearDisplay();
+        updateApi();
+    })
+})
 
 document.getElementById('locationForm').addEventListener('submit', function(event){
     event.preventDefault();
@@ -16,14 +24,18 @@ document.getElementById('locationForm').addEventListener('submit', function(even
     if (input){
         input = document.getElementById('locationInput').value;
         clearDisplay();
-        startApi();
+        updateApi();
     }
 })
 
 // saves api response to data using await
-async function startApi(){
+async function updateApi(){
     data = await getApi(input);
-    updateDisplay(data);
+    if (data){
+        updateDisplay(data);
+    } else {
+        alert("API Error");
+    }
 }
 
 // get api

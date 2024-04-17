@@ -15,12 +15,22 @@
                 <input type="text" id="locationInput" required placeholder="Location">
                 <button type="submit">Update Location</button>
             </form>
+            <div class="labels">
+                <label>
+                    <input type="radio" name="unit" value="C" checked>
+                    Celsius
+                </label>
+                <label>
+                    <input type="radio" name="unit" value="F">
+                    Fahrenheit
+                </label>
+            </div>
             <div class="current">
                 <p>Current:</p>
                 <img id="weatherImage" src="#" alt="future weather image">
                 <div class="weather-container">
-                    <p id="weatherDisplay">Sunny</p>
-                    <p id="weatherTemperature">30'C</p>
+                    <p id="weatherDisplay"></p>
+                    <p id="weatherTemperature"></p>
                 </div>
             </div>
             <p class="title">Today</p>

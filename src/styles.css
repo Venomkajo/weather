@@ -26,6 +26,15 @@ form
     gap: 10px;
 }
 
+.labels
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 25px;
+}
+
 button
 {
     background-color: slateblue;
