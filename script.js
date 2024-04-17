@@ -31,10 +31,21 @@ function updateDisplay(updateData) {
     currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
 
     // update today
-    const todayContainer = document.querySelector('.today24');
+    const todayContainer = document.querySelector('#today24');
+    update24(todayContainer, data, 0);
+    // update tomorrow
+    const tomorrowContainer = document.querySelector('#tomorrow24')
+    update24(tomorrowContainer, data, 1);
+    // update after tomorrow
+    const afterTomorrowContainer = document.querySelector('#afterTomorrow24');
+    update24(afterTomorrowContainer, data, 2);
+
+}
+
+function update24(containerDiv, data24, day){
     for (let i = 0; i < 24; i++){
 
-        currentHour = updateData.forecast.forecastday[0].hour[i];
+        currentHour = data24.forecast.forecastday[day].hour[i];
 
         const weatherGrid = document.createElement('div');
         weatherGrid.classList.add('weather-grid');
@@ -59,7 +70,7 @@ function updateDisplay(updateData) {
         weatherTemperatureP.innerText = currentHour.temp_c + 'C';
         weatherContainer.appendChild(weatherTemperatureP);
 
-        todayContainer.appendChild(weatherGrid);
+        containerDiv.appendChild(weatherGrid);
     }
 }
 
