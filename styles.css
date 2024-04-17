@@ -16,6 +16,24 @@ header p
     font-size: 48px;
 }
 
+form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+button
+{
+    background-color: slateblue;
+    color: white;
+    border: 5px solid white;
+    border-radius: 5%;
+}
+
 .weather-container
 {
     display: flex;
@@ -96,6 +114,7 @@ main
     background-color: lightcyan;
     outline: 5px solid black;
     padding: 10px;
+    margin-right: 5px;
     flex: 1;
     display: flex;
     align-items: center;

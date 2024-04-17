@@ -6,6 +6,16 @@ let input = 'wroclaw';
 
 startApi();
 
+document.getElementById('locationForm').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    if (input){
+        input = document.getElementById('locationInput').value;
+        clearDisplay();
+        startApi();
+    }
+})
+
 // saves api response to data using await
 async function startApi(){
     data = await getApi(input);
@@ -34,7 +44,7 @@ function updateDisplay(updateData) {
     const todayContainer = document.querySelector('#today24');
     update24(todayContainer, data, 0);
     // update tomorrow
-    const tomorrowContainer = document.querySelector('#tomorrow24')
+    const tomorrowContainer = document.querySelector('#tomorrow24');
     update24(tomorrowContainer, data, 1);
     // update after tomorrow
     const afterTomorrowContainer = document.querySelector('#afterTomorrow24');
@@ -71,6 +81,22 @@ function update24(containerDiv, data24, day){
         weatherContainer.appendChild(weatherTemperatureP);
 
         containerDiv.appendChild(weatherGrid);
+    }
+}
+
+function clearDisplay(){
+    const todayContainer = document.querySelector('#today24');
+    const tomorrowContainer = document.querySelector('#tomorrow24');
+    const afterTomorrowContainer = document.querySelector('#afterTomorrow24');
+
+    while (todayContainer.firstChild){
+        todayContainer.removeChild(todayContainer.firstChild);
+    }
+    while (tomorrowContainer.firstChild){
+        tomorrowContainer.removeChild(tomorrowContainer.firstChild);
+    }
+    while (afterTomorrowContainer.firstChild){
+        afterTomorrowContainer.removeChild(afterTomorrowContainer.firstChild);
     }
 }
 
