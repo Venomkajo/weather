@@ -6,14 +6,20 @@ export function updateDisplay(updateData) {
     const currentWeatherImage = document.getElementById('weatherImage');
     const currentWeatherDisplay = document.getElementById('weatherDisplay');
     const currentWeatherTemperature = document.getElementById('weatherTemperature');
+    const currentHumidity = document.getElementById('weatherHumidity');
+    const currentPressure = document.getElementById('weatherPressure');
 
     currentWeatherImage.src = updateData.current.condition.icon;
     currentWeatherDisplay.innerText = updateData.current.condition.text;
+
     if (getRadioButton() === 'C'){
         currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
     } else {
         currentWeatherTemperature.innerText = updateData.current.temp_f + 'F';
     }
+
+    currentHumidity.innerText = 'Humidity: ' + updateData.current.humidity;
+    currentPressure.innerText = 'Pressure: ' + updateData.current.pressure_mb + ' mb';
 
     // update today
     const todayContainer = document.querySelector('#today24');

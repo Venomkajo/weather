@@ -1,5 +1,5 @@
 // weather API 61fe5866c8534094a4804224241604
-// https://api.weatherapi.com/v1/forecast.json?key=61fe5866c8534094a4804224241604&q=Wroclaw&days=3&aqi=no&alerts=no
+// https://api.weatherapi.com/v1/forecast.json?key=61fe5866c8534094a4804224241604&q=London&days=3&aqi=no&alerts=no
 
 import './styles.css';
 import { updateDisplay } from './updateDisplay';

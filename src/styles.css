@@ -92,6 +92,12 @@ main
     background-color: lightskyblue;
 }
 
+#weatherImage
+{
+    width: 100px;
+    height: 100px;
+}
+
 .today
 {
     background-color: greenyellow;
