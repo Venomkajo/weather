@@ -6,7 +6,7 @@ import { updateDisplay } from './updateDisplay';
 import { clearDisplay } from './clearDisplay';
 
 let data = '';
-let input = 'wroclaw';
+let input = 'London';
 
 updateApi();
 
