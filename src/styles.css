@@ -1,3 +1,5 @@
+@import url(https://fonts.bunny.net/css?family=capriola:400);
+
 body
 {
     height: 100%;
@@ -10,6 +12,7 @@ body
     font-size: 36px;
     margin: 0;
     padding: 0;
+    font-family: 'Capriola', sans-serif;
 }
 
 header p
@@ -48,15 +51,6 @@ button
 button:hover
 {
     border: 3px solid black;
-}
-
-.weather-container
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
 }
 
 .today
@@ -123,7 +117,7 @@ main
 .container24
 {
     display: grid;
-    height: 600px;
+    height: 800px;
     width: 100%;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(4, 25%);
@@ -136,11 +130,37 @@ main
     background-color: lightcyan;
     outline: 5px solid black;
     padding: 10px;
+    gap: 10px;
     margin-right: 5px;
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.weather-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-left: 0px;
+}
+
+.weather-grid img
+{
+    margin-left: 0;
+}
+
+.weather-grid .weather-container p:first-child
+{
+    font-size: 24px;
+}
+
+.weather-grid .weather-container p:last-child
+{
+    margin-right: 10px;
+    font-size: 24px;
 }
 
 footer
@@ -156,4 +176,6 @@ footer
     justify-content: center;
     text-align: center;
     margin-top: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

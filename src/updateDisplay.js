@@ -1,4 +1,5 @@
 import { getRadioButton } from "./radioButtons";
+import { convertTime } from "./convertTime";
 
 // update the entire display
 export function updateDisplay(updateData) {
@@ -49,7 +50,7 @@ function update24(containerDiv, data24, day){
         weatherGrid.appendChild(weatherContainer);
 
         const timeDisplayP = document.createElement('p');
-        timeDisplayP.textContent = currentHour.time;
+        timeDisplayP.textContent = convertTime(currentHour.time);
         weatherContainer.appendChild(timeDisplayP);
 
         const weatherDisplayP = document.createElement('p');
