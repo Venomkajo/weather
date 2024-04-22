@@ -4,33 +4,35 @@ import { convertTime } from "./convertTime";
 // update the entire display
 export function updateDisplay(updateData) {
     // update current
-    const currentWeatherImage = document.getElementById('weatherImage');
-    const currentWeatherDisplay = document.getElementById('weatherDisplay');
-    const currentWeatherTemperature = document.getElementById('weatherTemperature');
-    const currentHumidity = document.getElementById('weatherHumidity');
-    const currentPressure = document.getElementById('weatherPressure');
-
-    currentWeatherImage.src = updateData.current.condition.icon;
-    currentWeatherDisplay.innerText = updateData.current.condition.text;
-
-    if (getRadioButton() === 'C'){
-        currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
-    } else {
-        currentWeatherTemperature.innerText = updateData.current.temp_f + 'F';
+    if (updateData.current){
+        const currentWeatherImage = document.getElementById('weatherImage');
+        const currentWeatherDisplay = document.getElementById('weatherDisplay');
+        const currentWeatherTemperature = document.getElementById('weatherTemperature');
+        const currentHumidity = document.getElementById('weatherHumidity');
+        const currentPressure = document.getElementById('weatherPressure');
+    
+        currentWeatherImage.src = updateData.current.condition.icon;
+        currentWeatherDisplay.innerText = updateData.current.condition.text;
+    
+        if (getRadioButton() === 'C'){
+            currentWeatherTemperature.innerText = updateData.current.temp_c + 'C';
+        } else {
+            currentWeatherTemperature.innerText = updateData.current.temp_f + 'F';
+        }
+    
+        currentHumidity.innerText = 'Humidity: ' + updateData.current.humidity;
+        currentPressure.innerText = 'Pressure: ' + updateData.current.pressure_mb + ' mb';
+    
+        // update today
+        const todayContainer = document.querySelector('#today24');
+        update24(todayContainer, updateData, 0);
+        // update tomorrow
+        const tomorrowContainer = document.querySelector('#tomorrow24');
+        update24(tomorrowContainer, updateData, 1);
+        // update after tomorrow
+        const afterTomorrowContainer = document.querySelector('#afterTomorrow24');
+        update24(afterTomorrowContainer, updateData, 2);
     }
-
-    currentHumidity.innerText = 'Humidity: ' + updateData.current.humidity;
-    currentPressure.innerText = 'Pressure: ' + updateData.current.pressure_mb + ' mb';
-
-    // update today
-    const todayContainer = document.querySelector('#today24');
-    update24(todayContainer, updateData, 0);
-    // update tomorrow
-    const tomorrowContainer = document.querySelector('#tomorrow24');
-    update24(tomorrowContainer, updateData, 1);
-    // update after tomorrow
-    const afterTomorrowContainer = document.querySelector('#afterTomorrow24');
-    update24(afterTomorrowContainer, updateData, 2);
 }
 
 function update24(containerDiv, data24, day){
